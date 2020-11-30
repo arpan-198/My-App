@@ -1,0 +1,45 @@
+<div class="bodydiv">
+    <div class="containerDiv">
+        <div class="head">
+            <p>user login</p><hr>
+        </div>
+        <div class="formDiv">
+            <form [formGroup]="_user_Login_Form">
+                <div>
+                    <label for="email">Enter Registered Email : </label><br>
+                    <input type="email"  id="email" formControlName="_email" required placeholder="Email Id">
+                    <div *ngIf="email.errors">
+                        <small *ngIf="email.errors?.required && email.touched" class="text-danger">
+                            Email is required
+                        </small>
+                        <small *ngIf="email.errors?.emailValidation" class="text-danger">
+                            {{email.errors.emailValidation.message}}
+                        </small> 
+                    </div>
+                </div><br>
+                <div>
+                    <label for="pass">Enter Password : </label><br>
+                    <input type="password"  id="pass" formControlName="_password" required placeholder="Password">
+                    <div *ngIf="pwd.errors">
+                        <small *ngIf="pwd.errors?.required && pwd.touched" class="text-danger">
+                            Password is required
+                        </small>
+                        <small *ngIf="pwd.errors?.passwordValidation" class="text-danger">
+                            {{pwd.errors.passwordValidation.message}}
+                        </small> 
+                    </div>
+                </div><br>
+                
+              
+                <div class="buttonDiv">
+                    <input type="submit" class="btn" value="LogIn" [disabled]="_user_Login_Form.invalid" (click)="checkLogin()">
+                    <input type="reset" class="btn" value="Reset">
+                </div>
+                <div class="new">
+                    <p>create <a [routerLink]="['../signup']">account</a>?</p>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</div>

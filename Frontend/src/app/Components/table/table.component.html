@@ -1,0 +1,37 @@
+<div class="mheader">
+
+    <h1>Table Data</h1>
+    <input type="button" value="Logout" (click)="logout()">
+
+
+</div>
+
+<div *ngIf="!tableData">
+    <div class="inner">
+        <h2>No Data Available</h2>
+        <input type="button" value="Upload New File" class="btn back">
+    </div>
+</div>
+
+
+
+<div *ngIf="tableData && keys">
+
+    <table border="1">
+        <thead>
+            <ng-container *ngFor="let x of keys">
+                <td>{{x | uppercase}}</td>
+            </ng-container>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let data of tableData['csvfile']">
+                <ng-container *ngFor="let k of keys">
+                    <td>{{data[k]}}</td>
+                </ng-container>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>

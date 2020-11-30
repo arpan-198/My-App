@@ -1,0 +1,31 @@
+table thead td{
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: large;
+}
+
+table tbody tr td {
+    padding: 10px;
+    text-align: center;
+    font-size: medium;
+}
+
+.mheader{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(196, 194, 194);
+    flex-direction: row;
+}
+
+
+
+
+.inner{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

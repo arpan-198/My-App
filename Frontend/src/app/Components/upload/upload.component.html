@@ -1,0 +1,25 @@
+<div class="bodydiv">
+    <div class="containerDiv">
+        <div class="head">
+            <p>upload File</p><hr>
+        </div>
+        <div class="formDiv">
+            <form [formGroup]="myForm">
+                <div>
+                    <label for="email">Enter CSV File : </label><br>
+                    <input type="file"  id="file"  #file required placeholder="CSV FILE"  formControlName="_fileUpload" enctype="multipart/form-data" accept=".csv" (change)="changeFile($event)">
+                </div><br>
+                
+              
+                <div class="buttonDiv">
+                    <input type="submit" class="btn" value="Submit" [disabled]="myForm.errors" (click)="uploadFile()">
+                    <input type="reset" class="btn" value="Reset">
+                </div>
+                <div class="new">
+                    <p><a [routerLink]="['../table']">Show existing file</a>?</p>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</div>
